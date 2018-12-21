@@ -7,54 +7,97 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
 
 <style type="text/css">
-	nav ul {
-    	text-align: center;
-    	width: 100%;
-    	/**position: fixed;**/
-    	/**background-color: black;***/
-	}
-	nav ul li {
-    	display: inline-block;
-    	margin: 55px;
-    	margin-bottom: 15px;
-    	margin-top: 25px;
-	}
-
-	nav ul li a {
-		font-size: 1.5em;
-	}
-
 	.middle-section {
-		display: block; 
-		text-align: center; 
-		margin-top: 10em;
+		padding: 50px 0px 50px 0px;
 	}
 
 	img {
 		border-radius: 50%;
-		border-color: green;
+		border-color: #559E54;
 		border-width: 5px;
     	border-style: solid;
 	}
+
+	div a {
+		padding: 0px 50px 0px 50px;
+		color: #559E54;
+	}
+
+	h3 {
+		color: #559E54;
+	}
+
+	.top {
+		text-align: center;
+		padding: 50px 0px 50px 0px;
+	}
+
+	.about-me {
+		padding: 50px 0px 50px 50px;
+	}
+
+	.about-me p {
+		font-size: 18px;
+	}
+
+	.work {
+		padding: 50px 0px 50px 50px;
+	}
+
+	ul {
+		display: inline-block;
+		padding-left: 0px;
+	}
+
+	.work li {
+		font-size: 18px;
+	}
 </style>
 
-	<body>
+<body>
+	<div class="container-fluid">
 		<header>
-			<nav>
-				<ul>
-					<li>
-						<a href="">About</a>
-					</li>
-					<li>
-						<a href="">Stack</a>
-					</li>
-					<li>
-						<a href="">Contacts</a>
-					</li>
-				</ul>
-			</nav>
-			<div class="middle-section">
-				<img src="https://media.licdn.com/dms/image/C5603AQHrBWN0Og-hZA/profile-displayphoto-shrink_200_200/0?e=1550707200&v=beta&t=tnQmzazMFWp5Cc06SEHAyiUCVpGd2V43GLkAuQdVjSk">
+			<div class="row">
+				<div class="col-xs-12 top">
+					<a href="#about-me">ABOUT ME</a>
+					<a href="#work">WORK</a>
+					<a href="">STACK</a>
+					<a href="">CONTACT</a>
+				</div>
 			</div>
 		</header>
-	</body>
+		<div class="row middle-section">
+			<div class="col-xs-12">
+				<img src="https://media.licdn.com/dms/image/C5603AQHrBWN0Og-hZA/profile-displayphoto-shrink_200_200/0?e=1550707200&v=beta&t=tnQmzazMFWp5Cc06SEHAyiUCVpGd2V43GLkAuQdVjSk" class="img-responsive center-block">
+			</div>
+		</div>
+		<div class="row">
+			<div id="about-me" class="col-xs-12 about-me">
+				<h3>ABOUT ME</h3>
+				<br>
+				<p>Hi! My name is Daniel Pinho and I was born in London, in 1985.</p>
+				<p>I grew up in Southampton, where I got the chance to find a hobbie related to computer science when I was 9 years old.<br>Then I proceeded to get a bachelor degree in London, in 2003.
+				<br>I'm interested in other things, of course, so as biking on the weekends or go karting with friends near Silverstone.</p>
+				<p>My parents are brazilian but I was friends with portuguese children. I speak and right fluent portuguese as, of course, english. Currently, I'm learning german because I like tough challenges</p>
+			</div>
+		</div>
+		<div class="row">
+			<div id="work" class="col-xs-12 work">
+				<h3>WORK</h3>
+				<ul>
+					<br>
+					<li>Intern at Google @ London -> Cloud and Ciber Security intern [Summer 2006]</li>
+					<br>
+					<li>Cloud and Ciber Security Engineer at Google @ London [Sep. 2007 - Jan. 2010]</li>
+					<br>
+					<li>Software Architect at Grooves Inc [Feb. 2010 - Sep. 2013]</li>
+					<br>
+					<li>Senior Software Architect at Grooves, Inc [Sep. 2013 - Aug. 2016]</li>
+					<br>
+					<li>Senior Software Archited at Altitude Software, Inc [Sep. 2016 - Currently]</li>
+					<br>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
