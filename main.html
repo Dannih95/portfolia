@@ -7,24 +7,36 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
 
 <style type="text/css">
+	body {
+		background-color: black;
+		color: white;
+	}
+
+	.row {
+		/**background-color: red;**/
+	}
+
 	.middle-section {
 		padding: 50px 0px 50px 0px;
 	}
 
 	img {
+		width: 100px;
+		height: 100px;
 		border-radius: 50%;
-		border-color: #559E54;
-		border-width: 5px;
+		border-color: black;
+		border-width: 1px;
     	border-style: solid;
+	}
+
+	#profile-image {
+		text-align: left;
+		padding: 50px 0px 0px 50px;
 	}
 
 	div a {
 		padding: 0px 50px 0px 50px;
-		color: #559E54;
-	}
-
-	h3 {
-		color: #559E54;
+		color: white;
 	}
 
 	.top {
@@ -32,25 +44,23 @@
 		padding: 50px 0px 50px 0px;
 	}
 
-	.about-me {
-		padding: 50px 0px 50px 50px;
+	#about-me-menu {
+		text-align: right;
+		padding-right: 0px;
 	}
 
-	.about-me p {
-		font-size: 18px;
+	#work-menu {
+		text-align: center;
 	}
 
-	.work {
-		padding: 50px 0px 50px 50px;
-	}
-
-	ul {
-		display: inline-block;
+	#stack-menu {
+		text-align: left;
 		padding-left: 0px;
 	}
 
-	.work li {
-		font-size: 18px;
+	#contact-menu {
+		text-align: right;
+		padding: 50px 50px 50px 0px;
 	}
 </style>
 
@@ -58,46 +68,22 @@
 	<div class="container-fluid">
 		<header>
 			<div class="row">
-				<div class="col-xs-12 top">
-					<a href="#about-me">ABOUT ME</a>
-					<a href="#work">WORK</a>
-					<a href="">STACK</a>
-					<a href="">CONTACT</a>
+				<div id="profile-image" class="col-xs-3" style="background-color: ;">
+					<p></p>
+				</div>
+				<div id="about-me-menu" class="col-xs-2 top" style="background-color: ;">
+					<a href="#about-me"><p>ABOUT ME</p></a>
+				</div>
+				<div id="work-menu" class="col-xs-2 top" style="background-color: ;">
+					<a href="#work"><p>WORK</p></a>
+				</div>
+				<div id="stack-menu" class="col-xs-2 top" style="background-color: ;">
+					<a href="#stack"><p>STACK</p></a>
+				</div>
+				<div id="contact-menu" class="col-xs-3" style="background-color: ;">
+					<a href="#contact"><p>CONTACT</p></a>
 				</div>
 			</div>
 		</header>
-		<div class="row middle-section">
-			<div class="col-xs-12">
-				<img src="https://media.licdn.com/dms/image/C5603AQHrBWN0Og-hZA/profile-displayphoto-shrink_200_200/0?e=1550707200&v=beta&t=tnQmzazMFWp5Cc06SEHAyiUCVpGd2V43GLkAuQdVjSk" class="img-responsive center-block">
-			</div>
-		</div>
-		<div class="row">
-			<div id="about-me" class="col-xs-12 about-me">
-				<h3>ABOUT ME</h3>
-				<br>
-				<p>Hi! My name is Daniel Pinho and I was born in London, in 1985.</p>
-				<p>I grew up in Southampton, where I got the chance to find a hobbie related to computer science when I was 9 years old.<br>Then I proceeded to get a bachelor degree in London, in 2003.
-				<br>I'm interested in other things, of course, so as biking on the weekends or go karting with friends near Silverstone.</p>
-				<p>My parents are brazilian but I was friends with portuguese children. I speak and right fluent portuguese as, of course, english. Currently, I'm learning german because I like tough challenges</p>
-			</div>
-		</div>
-		<div class="row">
-			<div id="work" class="col-xs-12 work">
-				<h3>WORK</h3>
-				<ul>
-					<br>
-					<li>Intern at Google @ London -> Cloud and Ciber Security intern [Summer 2006]</li>
-					<br>
-					<li>Cloud and Ciber Security Engineer at Google @ London [Sep. 2007 - Jan. 2010]</li>
-					<br>
-					<li>Software Architect at Grooves Inc [Feb. 2010 - Sep. 2013]</li>
-					<br>
-					<li>Senior Software Architect at Grooves, Inc [Sep. 2013 - Aug. 2016]</li>
-					<br>
-					<li>Senior Software Archited at Altitude Software, Inc [Sep. 2016 - Currently]</li>
-					<br>
-				</ul>
-			</div>
-		</div>
 	</div>
 </body>
