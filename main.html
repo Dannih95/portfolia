@@ -10,6 +10,7 @@
 	body {
 		background-color: black;
 		color: white;
+		font-family: sans-serif;
 	}
 
 	.row {
@@ -62,28 +63,157 @@
 		text-align: right;
 		padding: 50px 50px 50px 0px;
 	}
+
+	#about-me {
+		display: none;
+		padding-top: 50px;
+		text-align: center;
+	}
+
+	#work {
+		display: none;
+	}
+
+	#stack {
+		display: none;
+	}
 </style>
 
-<body>
+<script type="text/javascript">
+	function checkOnLoad() {
+		var url = document.URL;
+		var urlSplit = url.split("#");
+		var id = urlSplit[1]; // Like About Me or Work or Stack...
+		//window.alert(id);
+		switch(id) {
+			case "about-me":
+				document.getElementById("about-me").style.display = "block";
+				break;
+			case "work":
+				document.getElementById("work").style.display = "block";
+				break;
+			case "stack":
+				document.getElementById("stack").style.display = "block";
+				break;
+			default:
+				document.getElementById("about-me").style.display = "block";
+				break;
+		}
+	}
+
+	function changeToAboutMe() {
+		var aboutMe = document.getElementById("about-me");
+		var work = document.getElementById("work");
+		var stack = document.getElementById("stack");
+		//var contact = document.getElementById("contact");
+		aboutMe.style.display = "block";
+		work.style.display = "none";
+		stack.style.display = "none";
+		//contact.style.display = "none";
+	}
+
+	function changeToWork() {
+		var aboutMe = document.getElementById("about-me");
+		var work = document.getElementById("work");
+		var stack = document.getElementById("stack");
+		//var contact = document.getElementById("contact");
+		aboutMe.style.display = "none";
+		work.style.display = "block";
+		stack.style.display = "none";
+		//contact.style.display = "none";
+	}
+
+	function changeToStack() {
+		var aboutMe = document.getElementById("about-me");
+		var work = document.getElementById("work");
+		var stack = document.getElementById("stack");
+		//var contact = document.getElementById("contact");
+		aboutMe.style.display = "none";
+		work.style.display = "noone";
+		stack.style.display = "block";
+		//contact.style.display = "none";
+	}
+</script>
+
+<body onload="checkOnLoad()">
 	<div class="container-fluid">
 		<header>
 			<div class="row">
-				<div id="profile-image" class="col-xs-3" style="background-color: ;">
+				<div id="profile-image" class="col-xs-3">
 					<p></p>
 				</div>
-				<div id="about-me-menu" class="col-xs-2 top" style="background-color: ;">
-					<a href="#about-me"><p>ABOUT ME</p></a>
+				<div id="about-me-menu" class="col-xs-2 top">
+					<a href="#about-me" onclick="changeToAboutMe()"><p>ABOUT ME</p></a>
 				</div>
-				<div id="work-menu" class="col-xs-2 top" style="background-color: ;">
-					<a href="#work"><p>WORK</p></a>
+				<div id="work-menu" class="col-xs-2 top">
+					<a href="#work" onclick="changeToWork()"><p>WORK</p></a>
 				</div>
-				<div id="stack-menu" class="col-xs-2 top" style="background-color: ;">
-					<a href="#stack"><p>STACK</p></a>
+				<div id="stack-menu" class="col-xs-2 top">
+					<a href="#stack" onclick="changeToStack()"><p>STACK</p></a>
 				</div>
-				<div id="contact-menu" class="col-xs-3" style="background-color: ;">
+				<div id="contact-menu" class="col-xs-3">
 					<a href="#contact"><p>CONTACT</p></a>
 				</div>
 			</div>
 		</header>
+		<div id="about-me">
+			<div id="about-me-photo">
+				<img src="https://media.licdn.com/dms/image/C5603AQHrBWN0Og-hZA/profile-displayphoto-shrink_200_200/0?e=1550707200&v=beta&t=tnQmzazMFWp5Cc06SEHAyiUCVpGd2V43GLkAuQdVjSk">
+			</div>
+			<div>
+				<div >
+					<h2>
+						About me
+					</h2>
+					<h3>
+						I'm a 24 year-old guy, living in Lisbon.
+					</h3>
+					<h3>
+						I was born in Portimão, Algarve, and came to the capital to study Informatics and Computer Engineering in 2013.
+						<br>
+						I have an interest for sports, politics, economy and learning new technologies, as I'm learning a new stack right now.
+					</h3>
+					<h3>
+						Travelling is also, like it happens to millions of people, something that I love. 
+					</h3>
+				</div>
+			</div>
+		</div>
+		<div id="work">
+			<div>
+				<div >
+					<h2>
+						WORK
+					</h2>
+					<h3>
+						bla
+					</h3>
+					<h3>
+						gla
+					</h3>
+					<h3>
+						la
+					</h3>
+				</div>
+			</div>
+		</div>
+		<div id="stack">
+			<div>
+				<div >
+					<h2>
+						Stack
+					</h2>
+					<h3>
+						bla
+					</h3>
+					<h3>
+						gla
+					</h3>
+					<h3>
+						la
+					</h3>
+				</div>
+			</div>
+		</div>
 	</div>
 </body>
