@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-
+<html>
 <head>
 	<title>Pinho Portfolio</title>
 </head>
@@ -70,10 +70,16 @@
 		margin-bottom: 50px;
 	}
 
+	#about-me-icon {
+		margin-top: 100px;
+		font-size: 50px;
+	}
+
 	#work {
 		display: none;
 		padding-top: 50px;
 		text-align: center;
+		margin-bottom: 100px;
 	}
 
 	#resume-button {
@@ -91,11 +97,6 @@
 		text-align: center;
 	}
 
-	#about-me-icon {
-		margin-top: 100px;
-		font-size: 50px;
-	}
-
 	#stack-icon {
 		margin-top: 50px;
 		font-size: 50px;
@@ -105,13 +106,72 @@
 		background-color: white;
 	}
 
-	#footer {
-	 	position: fixed;
-	  	left: 0;
-		bottom: 0;
+	.container {
+		display: grid;
+		grid-template-columns: 50% 50%;
+	}
+
+	#contact {
+		display: none;
+		padding-top: 50px;
+		text-align: center;
+		margin-bottom: 100px;
+	}
+
+	.input {
+		margin-top: 50px;
+		margin-left: 40%;
+		margin-right: 40%;
+	}
+
+	.input p {
+		text-align: left;
+	}
+
+	.input input {
+		width: 100%;
+		color: black;
+	}
+
+	textarea {
+		width: 100%;
+		height: auto;
+		color: black;
+	}
+
+	.contact-space {
+		margin-top: 20px;
+	}
+
+	#message {
+		padding-bottom: 100px;
+	}
+
+	button {
+		color: black;
+		background-color: white;
+		margin-top: 10px;
+		border-radius: 2px;
+	}
+
+	footer {
+		position: fixed;
+		background-color: black;
+		bottom: 0px;
+		left: 0px;
+		right: 0px;
 		width: 100%;
 	  	color: white;
 	  	text-align: center;
+	  	margin-top: 50px;
+	}
+
+	.social {
+		font-size: 25px;
+	}
+
+	.social a {
+		padding: 0px 10px 0px 10px;
 	}
 </style>
 
@@ -131,6 +191,9 @@
 			case "stack":
 				document.getElementById("stack").style.display = "block";
 				break;
+			case "contact":
+				document.getElementById("contact").style.display = "block";
+				break;
 			default:
 				document.getElementById("about-me").style.display = "block";
 				break;
@@ -141,33 +204,44 @@
 		var aboutMe = document.getElementById("about-me");
 		var work = document.getElementById("work");
 		var stack = document.getElementById("stack");
-		//var contact = document.getElementById("contact");
+		var contact = document.getElementById("contact");
 		aboutMe.style.display = "block";
 		work.style.display = "none";
 		stack.style.display = "none";
-		//contact.style.display = "none";
+		contact.style.display = "none";
 	}
 
 	function changeToWork() {
 		var aboutMe = document.getElementById("about-me");
 		var work = document.getElementById("work");
 		var stack = document.getElementById("stack");
-		//var contact = document.getElementById("contact");
+		var contact = document.getElementById("contact");
 		aboutMe.style.display = "none";
 		work.style.display = "block";
 		stack.style.display = "none";
-		//contact.style.display = "none";
+		contact.style.display = "none";
 	}
 
 	function changeToStack() {
 		var aboutMe = document.getElementById("about-me");
 		var work = document.getElementById("work");
 		var stack = document.getElementById("stack");
-		//var contact = document.getElementById("contact");
+		var contact = document.getElementById("contact");
 		aboutMe.style.display = "none";
 		work.style.display = "none";
 		stack.style.display = "block";
-		//contact.style.display = "none";
+		contact.style.display = "none";
+	}
+
+	function changeToContact() {
+		var aboutMe = document.getElementById("about-me");
+		var work = document.getElementById("work");
+		var stack = document.getElementById("stack");
+		var contact = document.getElementById("contact");
+		aboutMe.style.display = "none";
+		work.style.display = "none";
+		stack.style.display = "none";
+		contact.style.display = "block";
 	}
 
 	function mouseOverResume(container) {
@@ -180,6 +254,13 @@
 		container.style.backgroundColor = "black";
 		container.style.color = "white";
 		container.style.cursor = "default";
+	}
+
+	function contactSendMessage() {
+		var name = document.getElementById("name");
+		var email = document.getElementById("email");
+		var message = document.getElementById("message");
+		window.alert(name.value + "\n" + email.value + "\n" + message.value);
 	}
 </script>
 
@@ -200,7 +281,7 @@
 					<a href="#stack" onclick="changeToStack()"><p>STACK</p></a>
 				</div>
 				<div id="contact-menu" class="col-xs-3">
-					<a href="#contact"><p>CONTACT</p></a>
+					<a href="#contact" onclick="changeToContact()"><p>CONTACT</p></a>
 				</div>
 			</div>
 		</header>
@@ -237,7 +318,7 @@
 						Work
 					</h2>
 					<h3>
-						Graduated with a BSc at Instituto Superior Técnico, Lisbon University in 2017.
+						Graduated with a BSc from Instituto Superior Técnico, Lisbon University in 2017.
 					</h3>
 					<h3>
 						After graduating, I was a summer intern at Everis, a consultant company belonging to the NTT DATA Group.
@@ -257,38 +338,59 @@
 		</div>
 		<div id="stack">
 			<div>
-				<div >
+				<div>
 					<h2>
 						Stack
 					</h2>
 					<div id="stack-icon">
-						<div>
-							<i class="fab fa-js-square"></i>
-						</div>
-						<div>
-							<!--<i class="fas fa-dot-circle"></i> Outsystems-->
-							<img src="outsystems.png">
-						</div>
-						<div>
-							<i class="fab fa-css3"></i>
-						</div>
-						<div>
-							<i class="fab fa-html5"></i>
-						</div>
-						<div>
-							<i class="fab fa-node"></i>
-						</div>
-						<div>
-							<i class="fab fa-react"></i>
-						</div>
-						<div>
-							<img src="mongodb.png">
+						<div class="container">
+							<div></div>
+							<div><i class="fab fa-js-square"></i></div>
+							<div>Outsystems</div>
+							<div><i class="fab fa-css3"></i></div>
+							<div><i class="fab fa-html5"></i></div>
+							<div><i class="fab fa-node"></i></div>
+							<div><i class="fab fa-react"></i></div>
+							<div><i class="fas fa-database"></i> mongoDB</div>
+							<div>Bootstrap</div>
+							<div>jQuery</div>
+							<div><i class="fab fa-sass"></i></div>
+							<div>Redux</div>
+							<div>SQL</div>
 						</div>
 					</div>
+				</div>
 			</div>
 		</div>
-		<div id="footer">
-  			<p>© 2018 Daniel Pinho. All rights deserved. <i class="fas fa-laptop-code"></i></p>
+		<div id="contact">
+			<div>
+				<div>
+					<h2>
+						Contact
+					</h2>
+					<div class="input">
+						<form action="" id="contact-form">
+							<p>Name*</p>
+							<input id="name" type="text">
+							<p class="contact-space">E-mail*</p>
+							<input id="email" type="text" placeholder="">
+							<p class="contact-space">Message*</p>
+							<textarea id="message" name="message"></textarea>
+							<button type="submit" class="btn btn-default btn-block btn-primary" form="contact-form" onclick="contactSendMessage()">Send</button>
+						</form>
+					</div>
+				</div>
+			</div>
 		</div>
+		<footer>
+  			<div class="social">
+  				<a href="https://www.linkedin.com/in/daniel-pinho-599314101/"><i class="fab fa-linkedin"></i></a>
+  				<a href="https://github.com/Dannih95"><i class="fab fa-github"></i></a>
+  			</div>
+			<div>
+  				<p>&copy 2019 Daniel Pinho. All rights deserved. <i class="fas fa-laptop-code"></i></p>
+  			</div>
+		</footer>
 	</div>
 </body>
+</html>
