@@ -260,7 +260,12 @@
 		var name = document.getElementById("name");
 		var email = document.getElementById("email");
 		var message = document.getElementById("message");
-		window.alert(name.value + "\n" + email.value + "\n" + message.value);
+		//window.alert(name.value + "\n" + email.value + "\n" + message.value);
+		var link = "mailto:xxx@gmail.com"
+					+ "?cc=" + email
+					+ "&subject=" + escape("contact-personal-website")
+					+ "&body=" + escape(message);
+		window.location.href = link;
 	}
 </script>
 
@@ -281,7 +286,7 @@
 					<a href="#stack" onclick="changeToStack()"><p>STACK</p></a>
 				</div>
 				<div id="contact-menu" class="col-xs-3">
-					<a href="#contact" onclick="changeToContact()"><p>CONTACT</p></a>
+					<a href="#contact" onclick="changeToContact();"><p>CONTACT</p></a>
 				</div>
 			</div>
 		</header>
@@ -371,13 +376,13 @@
 					<div class="input">
 						<form action="" id="contact-form">
 							<p>Name*</p>
-							<input id="name" type="text">
+							<input id="name" type="text" required>
 							<p class="contact-space">E-mail*</p>
-							<input id="email" type="text" placeholder="">
+							<input id="email" type="text" placeholder="" required> 
 							<p class="contact-space">Message*</p>
-							<textarea id="message" name="message"></textarea>
-							<button type="submit" class="btn btn-default btn-block btn-primary" form="contact-form" onclick="contactSendMessage()">Send</button>
+							<textarea id="message" name="message" required></textarea>
 						</form>
+						<button type="submit" class="btn btn-default btn-block btn-primary" form="contact-form">Send</button>
 					</div>
 				</div>
 			</div>
