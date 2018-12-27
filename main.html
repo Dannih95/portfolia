@@ -56,6 +56,7 @@
 	}
 
 	#contact-menu {
+		display: none;
 		text-align: right;
 		padding: 50px 50px 50px 0px;
 	}
@@ -84,6 +85,7 @@
 
 	#resume-button {
     	display: inline-block;
+    	text-decoration: none;
 		margin-top: 100px;
 		border-color: white;
 		border-width: 2px;
@@ -192,7 +194,7 @@
 				document.getElementById("stack").style.display = "block";
 				break;
 			case "contact":
-				document.getElementById("contact").style.display = "block";
+				document.getElementById("contact").style.display = "none";
 				break;
 			default:
 				document.getElementById("about-me").style.display = "block";
@@ -241,7 +243,7 @@
 		aboutMe.style.display = "none";
 		work.style.display = "none";
 		stack.style.display = "none";
-		contact.style.display = "block";
+		contact.style.display = "none";
 	}
 
 	function mouseOverResume(container) {
@@ -336,9 +338,9 @@
 						I've been working with the Outsystems techology at a client, developing and mantaining a business integrated workflow project.
 					</h3>
 				</div>
-				<div id="resume-button" onmouseover="mouseOverResume(this)" onmouseout="mouseOutResume(this)">
+				<a href="resume.pdf" id="resume-button" onmouseover="mouseOverResume(this)" onmouseout="mouseOutResume(this)" download="resume.pdf" target="_blank">
 					Resume
-				</div>
+				</a>
 			</div>
 		</div>
 		<div id="stack">
